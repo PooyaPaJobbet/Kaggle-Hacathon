@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ValidAI - Validation Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      /* Custom scrollbar for cleaner look */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 3px; }
+
+      /* Print Styles for PDF Export fallback */
+      @media print {
+        @page { size: A4; margin: 15mm; }
+        
+        html, body, #root {
+          height: auto !important;
+          min-height: 100% !important;
+          overflow: visible !important;
+          background: white !important;
+          -webkit-print-color-adjust: exact; 
+          print-color-adjust: exact;
+        }
+
+        /* Ensure the app wrapper breaks out of the flex/screen constraints */
+        #root > div {
+          height: auto !important;
+          overflow: visible !important;
+          display: block !important;
+        }
+
+        /* Utilities */
+        .no-print { display: none !important; }
+        .print-break-inside-avoid { break-inside: avoid; }
+        
+        /* Force background colors for readability */
+        .bg-emerald-50 { background-color: #ecfdf5 !important; }
+        .bg-red-50 { background-color: #fef2f2 !important; }
+        .bg-indigo-50 { background-color: #eef2ff !important; }
+        .bg-slate-50 { background-color: #f8fafc !important; }
+
+        /* Ensure tables print nicely */
+        tr { page-break-inside: avoid; }
+        thead { display: table-header-group; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "xlsx": "https://esm.sh/xlsx@0.18.5"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

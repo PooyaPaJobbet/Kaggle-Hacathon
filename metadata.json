@@ -1,0 +1,5 @@
+{
+  "name": "ValidAI - Autonomous Validation Agent",
+  "description": "An AI-powered validation assistant that gathers requirements via chat, generates structured test plans, simulates cloud-based execution, and manages validation version history.",
+  "requestFramePermissions": []
+}
